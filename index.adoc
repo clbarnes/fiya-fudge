@@ -1,0 +1,192 @@
+= FIYA-FUDGE
+:author: Chris L. Barnes
+:toc: left
+:description: FIYA-FUDGE Is Yet Another Freeform Universal Do-it-yourself Game Engine
+:sectnumlevels: 3
+
+FIYA-FUDGE is a flexible, setting-agnostic, extensible tabletop role-playing game.
+It is based on Steffan O'Sullivan's FUDGE (1995).
+
+== Preface
+
+=== About FUDGE
+
+FUDGE is a role-playing game written by Steffan O'Sullivan, with extensive input from the Usenet community of rec.games.design.
+The basic rules of FUDGE are available on the internet via anonymous ftp at ftp.csua.berkeley.edu, and in book form or on disk from Grey Ghost Games, P.O. Box 838, Randolph, MA 02368.
+They may be used with any gaming genre.
+While an individual work derived from FUDGE may specify certain attributes and skills, many more are possible with FUDGE. Every Game Master using FUDGE is encouraged to add or ignore any character traits.
+Anyone who wishes to distribute such material for free may do so — merely include this ABOUT FUDGE notice and disclaimer (complete with FUDGE copyright notice).
+If you wish to charge a fee for such material, other than as an article in a magazine or other periodical, you must first obtain a royalty-free license from the author of FUDGE, Steffan O'Sullivan, P.O. Box 465, Plymouth, NH 03264.
+
+More details can be found at https://fudgerpg.com/[fudgerpg.com].
+
+=== Disclaimer
+
+The following materials based on FUDGE, entitled FIYA-FUDGE, are created by Chris L. Barnes and made available by Chris L. Barnes, and are not authorized or endorsed in any way by Steffan O'Sullivan or any publisher of other FUDGE materials.
+Neither Steffan O'Sullivan or any publisher of other FUDGE material is in any way responsible for the content of these materials.
+Original FUDGE materials (c) Copyright 1992-1995 Steffan O'Sullivan, All Rights Reserved.
+
+=== License
+
+....
+include::LICENSE[]
+....
+
+:sectnums:
+
+== Introduction
+
+=== Nomenclature
+
+
+
+== Concepts
+
+[#dice]
+=== Fudge dice
+
+Without randomness, RPGs are "just" storytelling.
+The plot is made unpredictable using Fudge dice (dF): 6 sided dice where 2 sides are `+`, 2 sides are `-`, and 2 sides are blank.
+Generally, these are rolled 4 at a time (but depending on the situation, those 4 may be divided between the player and the GM): add up the ``+``s and take away the ``-``s, and you have your "raw" result.
+Raw rolls will usually have modifiers added or subtracted in the game.
+
+.4dF probabilities
+[cols="^,^,^", options="header"]
+|===
+| Value | Probability of matching | Probability of matching or beating
+
+| +4 | 1.23% | 1.23%
+
+| +3 | 4.94% | 6.17%
+
+| +2 | 12.35% | 18.52%
+
+| +1 | 19.75% | 38.27%
+
+| 0 | 23.46% | 61.73%
+
+| -1 | 19.75% | 81.48%
+
+| -2 | 12.35% | 93.83%
+
+| -3 | 4.94% | 98.77%
+
+| -4 | 1.23% | 100%
+|===
+
+=== The adjective ladder
+
+Immersive role-playing experiences are all about description.
+Common dice rolls, modifiers, and attribute levels are assigned the following Adjectives.
+
+[#ladder, cols=">,<", options="header"]
+|===
+| Value | Adjective
+
+| +4 | Legendary
+
+| +3 | Superb
+
+| +2 | Great
+
+| +1 | Good
+
+| 0 | Fair 
+
+| -1 | Mediocre
+
+| -2 | Poor
+
+| -3 | Terrible
+
+| -4 | Abysmal
+|===
+
+Use them where appropriate.
+
+====
+You are a Superb (+3) swordsman, a Terrible (-3) archer, a Good (+1) leader.
+You rolled a Great (+2) result.
+====
+
+=== Scale
+
+The adjective ladder works in relative terms.
+A pixie with Great strength _for a pixie_ will be hard pressed to knock out a giant, even if it has Mediocre toughness _for a giant_.
+A longsword may have Good range for a melee weapon (compared to, say, knuckle dusters): but clearly has worse range than even a Poor sniper rifle.
+This allows FUDGE to represent dreadnought-class starships firing atomizers at each other, shrunken scientists fighting off mutated macrophages, and everything in between using the same system.
+
+If the GM is comparing two objects which are clearly described in different contexts, she may add Scale modifiers to account for this.
+
+.Mass scale
+====
+A common use of scale is to represent things of different size.
+As a rule of thumb, 1 point on the Mass scale represents a 1.5-fold difference.
+A 6' human may have Mass 0: a 4'6" halfling would have Mass -1.
+A 9' ogre would have Mass 1.
+A 45' dragon would have Mass 5.
+
+For every point that Mass increases, the GM may decide that a creature hits 1 point harder, is 1 point tougher, but is 1 point easier to hit and has 1 point harder a time sneaking around.
+A Great (+2) attack from a human would be equivalent to a Superb (+3) attack from a halfling, or a Terrible (-3) attack from a dragon.
+====
+
+[#pyramid]
+=== The Skill pyramid
+
+Skills describe how good an entity is at doing something (this is intentionally vague!).
+They are described by an <<ladder,Adjective>>: the value associated with that <<ladder,Adjective>> is added to the result when doing something using that Skill.
+
+.Skill use
+====
+A Mediocre (-1) archer makes a Great (+2) roll.
+The final result is `2 - 1 =` Good (+1); fine to hit a large target at moderate range. 
+====
+
+Sometimes, you need to make actions which you don't have a specific Skill for.
+If you have a related Skill which doesn't exactly match the situation, you can still benefit, but not at your full Skill level.
+The further a task is from your trained Skill, the greater the deficit.
+
+.Skill spread
+====
+A Superb (+3) lockpicker attempts to disarm a trap.
+His excellent dexterity and knowledge of mechanisms is invaluable, even though he hasn't specifically trained on traps.
+He counts as a Great (+2) trap disarmer.
+====
+
+If an action could relate to one of several skills, you may pick the one with the higher bonus.
+
+==== Skill selection
+
+There is no prescriptive set of skills in FIYA-FUDGE.
+Skills available will differ drastically between settings, and any list provided may not fully capture your understanding of your character.
+Feel free to look for inspiration in fiction, other RPGs, or the dictionary!
+
+Consider _why_ your character has the skills they do - experiences, people, and places are great flavour.
+Did they become a Great (+2) hunter living off tree-rats in the overgrown ruins of a fallen Megacity?
+Do they sleep with one eye open after stealing a master ninja's Superb (+3) concealment techniques?
+
+By the same token, lower-level skills can be broader than high-level skills.
+You cannot be Superb (+3) at all kinds of driving, piloting, and coxswaining with one skill.
+You could, however, be Good (+1) at manoeuvering anything with a steering wheel.
+
+As always, the GM has the final say on how broad is too broad, which skills are appropriate for the setting, and so on.
+
+=== Everything is a character
+
+What is a character?
+A game entity which interacts with other such entities in a manner defined by its numerical/adjectival attributes.
+This is, of course, not limited to individual identifiable personalities.
+A wolf may be a Great (+2) tracker, but a Mediocre (-1) climber.
+A swarm of bees may be Superb (+3) at detecting scents.
+
+A hurricane may be Superb (+3) at knocking characters off their feet.
+A tumbledown castle wall may be Poor (-2) at keeping out intruders.
+
+Where possible, frame conflicts in this way.
+
+=== Yes, and...
+
+Whenever a die is rolled, its result should advance the story.
+Failing to hack into the mainframe shouldn't leave players asking if they can just try again tomorrow - maybe they get the information they need, but hear the jackboots of megacorp security thundering down the corridor towards them.
+
+=== Crunch time
