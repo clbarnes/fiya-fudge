@@ -1,0 +1,37 @@
+[appendix]
+= Legal Notice
+
+== About FUDGE
+
+FUDGE is a role-playing game written by Steffan O'Sullivan, with extensive input from the Usenet community of rec.games.design.
+The basic rules of FUDGE are available on the internet via anonymous ftp at ftp.csua.berkeley.edu, and in book form or on disk from Grey Ghost Games, P.O. Box 838, Randolph, MA 02368.
+They may be used with any gaming genre.
+While an individual work derived from FUDGE may specify certain attributes and skills, many more are possible with FUDGE. Every Game Master using FUDGE is encouraged to add or ignore any character traits.
+Anyone who wishes to distribute such material for free may do so — merely include this ABOUT FUDGE notice and disclaimer (complete with FUDGE copyright notice).
+If you wish to charge a fee for such material, other than as an article in a magazine or other periodical, you must first obtain a royalty-free license from the author of FUDGE, Steffan O'Sullivan, P.O. Box 465, Plymouth, NH 03264.
+
+More details can be found at https://fudgerpg.com/[fudgerpg.com].
+
+== Disclaimer
+
+The following materials based on FUDGE, entitled FIYA-FUDGE, are created by Chris L. Barnes and made available by Chris L. Barnes, and are not authorized or endorsed in any way by Steffan O'Sullivan or any publisher of other FUDGE materials.
+Neither Steffan O'Sullivan or any publisher of other FUDGE material is in any way responsible for the content of these materials.
+Original FUDGE materials (c) Copyright 1992-1995 Steffan O'Sullivan, All Rights Reserved.
+
+== License
+
+....
+include::../LICENSE[]
+....
+
+== Open Game Content
+
+In accordance with the Open Game License Section 8 “Identification” the following designate Open Game Content and Product Identity:
+
+The contents of this document are declared Open Game Content except for the portions specifically declared as Product Identity (see below).
+
+== Product Identity
+
+All artwork, logos, symbols, designs, depictions, illustrations, maps and cartography, likenesses, and other graphics, unless specifically identified as Open Game Content, are considered Product Identity.
+
+Non-Player Characters with names specified in any part of the game’s History or elsewhere are likewise considered Product Identity, as are names of corporations, governments, or other entities.
