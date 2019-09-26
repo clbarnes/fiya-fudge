@@ -9,4 +9,6 @@
 FIYA-FUDGE is a flexible, setting-agnostic, extensible tabletop role-playing game.
 It is based on Steffan O'Sullivan's FUDGE (1995).
 
+This is version {revnumber}, built using https://asciidoctor.org/[Asciidoctor] v{asciidoctor-version} with the "{backend}" backend on {localdatetime}.
+
 include::content/_index.adoc[]
