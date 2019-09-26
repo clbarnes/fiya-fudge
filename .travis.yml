@@ -10,4 +10,4 @@ matrix:
 rvm:
   - 2.6
 script:
-  - bundle exec rake
+  - bundle exec rake $RAKE_TARGET
