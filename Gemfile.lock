@@ -22,6 +22,7 @@ GEM
       safe_yaml (~> 1.0.0)
       thread_safe (~> 0.3.0)
       treetop (~> 1.5.0)
+    bump (0.8.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     css_parser (1.7.0)
@@ -108,8 +109,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor (= 2.0.10)
   asciidoctor-epub3 (= 1.5.0.alpha.9)
   asciidoctor-pdf (= 1.5.0.beta.5)
+  bump
   epubcheck (= 3.0.1)
   guard-rake (= 1.0.0)
   kindlegen (= 3.0.3)

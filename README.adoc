@@ -1,5 +1,8 @@
 = FIYA-FUDGE
 
+v
+include::VERSION[]
+
 _FIYA-FUDGE_ Is Yet Another Freeform Universal Do-it-yourself Game Engine
 
 == Build tools

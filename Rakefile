@@ -18,6 +18,10 @@ MASTER_FILENAME='index.adoc'
 BUILD_DIR='build'
 autoload :FileUtils, 'fileutils'
 
+require "bump/tasks"
+Bump.tag_by_default = true
+Bump.replace_in_default = ["VERSION", "index.adoc", "README.adoc"]
+
 desc 'Build the HTML5 format'
 task :html do
   # TODO move logic to images task
