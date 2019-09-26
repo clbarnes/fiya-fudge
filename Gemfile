@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'rake', '12.0.0'
+gem 'asciidoctor', '2.0.10'
 gem 'asciidoctor-pdf', '1.5.0.beta.5'
 gem 'asciidoctor-epub3', '1.5.0.alpha.9'
 gem 'guard-rake', '1.0.0'
