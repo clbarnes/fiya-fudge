@@ -1,0 +1,13 @@
+language: ruby
+cache: bundler
+env:
+  - RAKE_TARGET=html
+  - RAKE_TARGET=epub3
+  - RAKE_TARGET=pdf
+matrix:
+  allow_failures:
+    - env: RAKE_TARGET=epub3
+rvm:
+  - 2.6
+script:
+  - bundle exec rake
