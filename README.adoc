@@ -1,8 +1,5 @@
 = FIYA-FUDGE
 
-v
-include::VERSION[]
-
 _FIYA-FUDGE_ Is Yet Another Freeform Universal Do-it-yourself Game Engine
 
 == Build tools
@@ -16,7 +13,7 @@ Use asciidoctor as a command line tool according to its documentation.
 
 === Full
 
-- https://bundler.io/[bundler] `gem install bundler`
+* https://bundler.io/[bundler] `gem install bundler`
 
 Use `bundle install` to install all other dependencies.
 
