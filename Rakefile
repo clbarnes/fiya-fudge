@@ -61,6 +61,18 @@ task :pdf do
   )
 end
 
+desc 'Build the docbook 5 format'
+task :docbook do
+  require 'asciidoctor'
+  Asciidoctor.convert_file(
+    MASTER_FILENAME,
+    safe: :unsafe,
+    backend: 'docbook',
+    to_dir: BUILD_DIR,
+    mkdirs: true,
+  )
+end
+
 # TIP invoke using epub[ebook-validate] to validate
 desc 'Build the EPUB3 format'
 task :epub, [:attrs] do |_, args|
@@ -95,7 +107,7 @@ desc 'Build the EPUB3 and MOBI formats'
 task ebook: [:epub, :mobi]
 
 desc 'Build all formats'
-task default: [:pdf, :html, :epub]
+task default: [:pdf, :html, :epub, :docbook]
 
 desc 'Clean the build directory'
 task :clean do
