@@ -95,8 +95,7 @@ desc 'Build the EPUB3 and MOBI formats'
 task ebook: [:epub, :mobi]
 
 desc 'Build all formats'
-task default: [:html, :pdf]
-# task default: [:html, :ebook, :pdf]
+task default: [:pdf, :html, :epub]
 
 desc 'Clean the build directory'
 task :clean do
