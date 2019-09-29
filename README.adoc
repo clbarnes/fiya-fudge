@@ -1,6 +1,8 @@
 = FIYA-FUDGE
 
-_FIYA-FUDGE_ Is Yet Another Freeform Universal Do-it-yourself Game Engine
+_FIYA-FUDGE_ Is Yet Another Freeform Universal Do-it-yourself Game Engine.
+
+_FIYA_ has all of __FUDGE__'s flexibility, but is based on an opinionated "starter kit" to allow you to get playing without deep knowledge of the different options.
 
 == Build tools
 
@@ -9,7 +11,7 @@ _FIYA-FUDGE_ Is Yet Another Freeform Universal Do-it-yourself Game Engine
 * https://www.ruby-lang.org/en/documentation/installation/[ruby]
 * https://asciidoctor.org/[asciidoctor] `gem install asciidoctor`
 
-Use asciidoctor as a command line tool according to its documentation.
+Use asciidoctor as a command line tool according to its documentation, where `./index.adoc` is the master file.
 
 === Full
 
@@ -24,6 +26,11 @@ To build for a specific target, use
 ----
 bundle exec rake html
 bundle exec rake pdf
+bundle exec rake epub
+bundle exec rake docbook
 ----
 
 To watch the source directory for changes and build for all targets, use `bundle exec guard start`.
+
+`bundle exec rake docs` clears the `./docs` directory and then builds the HTML target inside it.
+This can trivially be served as a static site with https://pages.github.com/[GitHub Pages].

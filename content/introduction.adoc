@@ -4,9 +4,24 @@
 == Glossary
 
 [glossary]
-Character:: An in-game entity, governed by the rules of FIYA-FUDGE and the judgement of the Game Master
+Character:: An in-game entity, governed by the rules of {doctitle} and the judgement of the Game Master
 Fudge Die (dF):: A six-sided die with two sides marked `+`, two `-`, and two blank
-Game Master (GM):: A human who governs the rules of the in-game world, and whose judgement is final (generally referred to as "she")
+Game Master (GM):: A human who governs the rules of the in-game world, and whose judgement is final (referred to in this document as "she")
 Non-Player Character (NPC):: A Character controlled (explicitly or implicitly) by the Game Master
-Player:: A human playing FIYA-FUDGE in the real world (generally referred to as "he")
+Player:: A human playing {doctitle} in the real world (referred to in this document as "he")
 Player Character (PC):: A Character controlled by a Player
+
+== Role-playing games
+
+{doctitle} shares a lot of style with many tabletop RPGs.
+One player assumes the role of Game Master: she is the conduit between a small group of Players and the game world.
+She has control over places, people, and creatures the Players may meet.
+She even has final say over the rules of play.
+
+Players each control a Character.
+They choose who that Character is - their history, how they think, what they're good at.
+
+Whenever the Player Characters attempt something which they may not succeed at, dice are rolled to check the outcome.
+The Game Master determines exactly what happens based on the Players' skills, whether they are in a contest against a Non-Player Character or element of the environment, and the dice result.
+
+In this way, narratives are crafted with a great deal of flexibility and the possibility of surprising everyone at the table!

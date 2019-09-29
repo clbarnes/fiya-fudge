@@ -6,9 +6,9 @@
 :sectnums:
 :revnumber: 0.1.0
 
-FIYA-FUDGE is a flexible, setting-agnostic, extensible tabletop role-playing game.
-It is based on Steffan O'Sullivan's FUDGE (1995).
+{doctitle} Is Yet Another Freeform Universal Do-it-yourself Game Engine: a flexible, setting-agnostic, extensible tabletop role-playing game.
+It is based on <<_about_fudge, Steffan O'Sullivan's FUDGE (1995)>>.
 
-This is version {revnumber}, built using https://asciidoctor.org/[Asciidoctor] v{asciidoctor-version} with the "{backend}" backend on {localdatetime}.
+This is version {revnumber}, built using https://asciidoctor.org/[Asciidoctor] v{asciidoctor-version} with the `{backend}` backend on {localdatetime}.
 
 include::content/_index.adoc[]
