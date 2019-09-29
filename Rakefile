@@ -25,15 +25,17 @@ Bump.replace_in_default = ["VERSION", "index.adoc", "README.adoc"]
 def make_html(tgt_dir)
   # TODO move logic to images task
   ((FileList.new '**/*.{jpg,png,svg}').exclude %(#{tgt_dir}/**/*)).each do |img_path|
-    target_dir = File.join tgt_dir, (File.dirname img_path)
-    FileUtils.mkdir_p target_dir
-    FileUtils.cp img_path, target_dir
+    target_dir = File.join(tgt_dir, File.dirname(img_path))
+    FileUtils.mkdir_p(target_dir)
+    FileUtils.cp(img_path, target_dir)
   end
   require 'asciidoctor'
-  Asciidoctor.convert_file MASTER_FILENAME,
+  Asciidoctor.convert_file(
+    MASTER_FILENAME,
     safe: :unsafe,
     to_dir: tgt_dir,
-    mkdirs: true
+    mkdirs: true,
+  )
 end
 
 desc 'Build the HTML5 format'
@@ -43,43 +45,49 @@ end
 
 desc 'Build HTML5 in ./docs directory, for hosting as a static site'
 task :docs do
-  FileUtils.remove_entry_secure 'docs' if File.exist? 'docs'
+  FileUtils.remove_entry_secure('docs') if File.exist? 'docs'
   make_html('docs')
 end
 
 desc 'Build the PDF format'
 task :pdf do
   require 'asciidoctor-pdf'
-  Asciidoctor.convert_file MASTER_FILENAME,
+  Asciidoctor.convert_file(
+    MASTER_FILENAME,
     safe: :unsafe,
     backend: 'pdf',
     to_dir: BUILD_DIR,
-    mkdirs: true
+    mkdirs: true,
+  )
 end
 
 # TIP invoke using epub[ebook-validate] to validate
 desc 'Build the EPUB3 format'
 task :epub, [:attrs] do |_, args|
   require 'asciidoctor-epub3'
-  Asciidoctor.convert_file MASTER_FILENAME,
+  Asciidoctor.convert_file(
+    MASTER_FILENAME,
     safe: :unsafe,
     backend: 'epub3',
     attributes: [args[:attrs]].compact * ' ',
     to_dir: BUILD_DIR,
-    mkdirs: true
+    mkdirs: true,
+  )
 end
 
 desc 'Build the MOBI format'
 task :mobi do
   require 'asciidoctor-epub3'
-  Asciidoctor.convert_file MASTER_FILENAME,
+  Asciidoctor.convert_file(
+    MASTER_FILENAME,
     safe: :unsafe,
     backend: 'epub3',
     attributes: 'ebook-format=kf8',
     to_dir: BUILD_DIR,
     mkdirs: true
+  )
   # NOTE remove the temporary -kf8.epub file so we don't get confused
-  File.unlink %(#{BUILD_DIR}/#{File.basename MASTER_FILENAME, '.*'}-kf8.epub)
+  File.unlink(%(#{BUILD_DIR}/#{File.basename MASTER_FILENAME, '.*'}-kf8.epub))
 end
 task kf8: :mobi
 
@@ -92,5 +100,5 @@ task default: [:html, :pdf]
 
 desc 'Clean the build directory'
 task :clean do
-  FileUtils.remove_entry_secure BUILD_DIR if File.exist? BUILD_DIR
+  FileUtils.remove_entry_secure(BUILD_DIR) if File.exist? BUILD_DIR
 end
