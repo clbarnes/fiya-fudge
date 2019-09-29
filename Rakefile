@@ -22,19 +22,29 @@ require "bump/tasks"
 Bump.tag_by_default = true
 Bump.replace_in_default = ["VERSION", "index.adoc", "README.adoc"]
 
-desc 'Build the HTML5 format'
-task :html do
+def make_html(tgt_dir)
   # TODO move logic to images task
-  ((FileList.new '**/*.{jpg,png,svg}').exclude %(#{BUILD_DIR}/**/*)).each do |img_path|
-    target_dir = File.join BUILD_DIR, (File.dirname img_path)
+  ((FileList.new '**/*.{jpg,png,svg}').exclude %(#{tgt_dir}/**/*)).each do |img_path|
+    target_dir = File.join tgt_dir, (File.dirname img_path)
     FileUtils.mkdir_p target_dir
     FileUtils.cp img_path, target_dir
   end
   require 'asciidoctor'
   Asciidoctor.convert_file MASTER_FILENAME,
     safe: :unsafe,
-    to_dir: BUILD_DIR,
+    to_dir: tgt_dir,
     mkdirs: true
+end
+
+desc 'Build the HTML5 format'
+task :html do
+  make_html(BUILD_DIR)
+end
+
+desc 'Build HTML5 in ./docs directory, for hosting as a static site'
+task :docs do
+  FileUtils.remove_entry_secure 'docs' if File.exist? 'docs'
+  make_html('docs')
 end
 
 desc 'Build the PDF format'
